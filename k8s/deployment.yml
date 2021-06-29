@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: person-app
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -33,4 +33,3 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 31500
