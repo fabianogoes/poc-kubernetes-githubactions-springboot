@@ -44,4 +44,4 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: eprogramar/person:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/person:latest
