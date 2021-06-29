@@ -23,6 +23,7 @@ fun main(args: Array<String>) {
 class Welcome(private val repository: PersonRepository) {
 
     init {
+        repository.deleteAll()
         listOf(
             Person(name = "Fabiano"),
             Person(name = "Dulci"),
