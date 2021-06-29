@@ -45,3 +45,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USER }}/person:latest
+      -
+        name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
