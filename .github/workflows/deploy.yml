@@ -69,7 +69,7 @@ jobs:
       - name: Deploy new image to staging namespace
         run: |
           cd k8s/
-          kubectl apply -f-
+          kubectl apply -f deployment.yml
 #          kustomize edit set image ghcr.io/digitalsoba/digitalsoba.com:${{ steps.get_sha.outputs.sha_short }}
 #          kustomize build | kubectl apply -f-
       - name: Cleanup
