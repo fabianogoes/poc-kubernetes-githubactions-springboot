@@ -39,3 +39,11 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USER }}/person:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
