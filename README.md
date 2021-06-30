@@ -18,3 +18,4 @@
 - [Scaleway github actions to deploy into kubernetes](https://digitalsoba.com/kubernetes/scw-gh-actions/)
 - [Scaleway Elements Kubernetes Kapsule](https://www.scaleway.com/en/docs/get-started-with-scaleway-kubernetes-kapsule/)
 - [How to deploy Kubeflow on Kubernetes Kapsule](https://www.scaleway.com/en/docs/how-to-deploy-kubeflow-on-kubernetes-kapsule/#-Installing-kubectl-on-your-local-computer)
+- [Como criar pipeline CI/CD com Jenkins e Kubernetes - Fabricio Veronez](https://www.youtube.com/watch?v=PxdsFL4NDfM)
