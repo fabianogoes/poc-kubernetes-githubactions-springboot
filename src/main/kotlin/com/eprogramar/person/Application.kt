@@ -36,8 +36,8 @@ class Welcome(
         ).forEach(repository::save)
         repository.findAll().forEach(::println)
 
-        println("MONGO_USER: ${envs["MONGO_USER"]}")
-        println("MONGO_USER: ${envs["MONGO_PASSWORD"]}")
+        println("MONGO_USER: ${envs.getProperty("MONGO_USER")}")
+        println("MONGO_USER: ${envs.getProperty("MONGO_PASSWORD")}")
     }
 
     @GetMapping
