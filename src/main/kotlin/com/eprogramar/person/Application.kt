@@ -3,8 +3,6 @@ package com.eprogramar.person
 import org.bson.types.ObjectId
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.core.env.Environment
-import org.springframework.core.env.get
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.repository.MongoRepository
@@ -22,8 +20,7 @@ fun main(args: Array<String>) {
 @RestController
 @RequestMapping("/")
 class Welcome(
-    private val repository: PersonRepository,
-    private val envs: Environment
+    private val repository: PersonRepository
 ) {
 
     init {
@@ -35,9 +32,6 @@ class Welcome(
             Person(name = "Davi"),
         ).forEach(repository::save)
         repository.findAll().forEach(::println)
-
-        println("MONGO_USER: ${envs.getProperty("MONGO_USER")}")
-        println("MONGO_USER: ${envs.getProperty("MONGO_PASSWORD")}")
     }
 
     @GetMapping
