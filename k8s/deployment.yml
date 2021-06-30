@@ -17,6 +17,9 @@ spec:
       containers:
         - name: person
           image: docker.io/fabianogoes/person:latest
+          env:
+            - name: spring_profiles_active
+              value: "prod"
           ports:
             - containerPort: 8080
 ---
