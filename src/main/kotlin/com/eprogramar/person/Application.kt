@@ -6,10 +6,9 @@ import org.springframework.boot.runApplication
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @SpringBootApplication
 class Application
@@ -38,6 +37,9 @@ class Welcome(private val repository: PersonRepository) {
 
     @GetMapping("/persons")
     fun getPersons() = ResponseEntity.ok(repository.findAll())
+
+    @PostMapping("/persons")
+    fun postPerson(@RequestBody person: Person) = ResponseEntity(repository.save(person), HttpStatus.CREATED)
 
 }
 

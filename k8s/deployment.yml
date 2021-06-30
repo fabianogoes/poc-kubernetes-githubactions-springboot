@@ -20,6 +20,8 @@ spec:
           env:
             - name: spring_profiles_active
               value: "prod"
+            - name: MONGO_PERSON_URI
+              value: "mongodb://admin:admin@mongo-homolog/test?authSource=admin"
           ports:
             - containerPort: 8080
 ---
